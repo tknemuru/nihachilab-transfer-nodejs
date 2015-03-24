@@ -8,6 +8,7 @@
     "email": ""
   },
   "dependencies": {
-    "nodemailer": "~1.3.2"
+    "nodemailer": "~1.3.2",
+    "express": "~4.12.3"
   }
 }
