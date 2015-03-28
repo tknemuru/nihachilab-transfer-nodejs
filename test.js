@@ -1,4 +1,4 @@
-﻿var request = require('supertest')
+var request = require('supertest')
 var app = require('./server');
 
 describe('My API tests', function () {   
