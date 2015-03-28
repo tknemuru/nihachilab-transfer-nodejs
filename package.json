@@ -12,7 +12,10 @@
     "express": "~4.12.3",
     "mocha": "~2.2.1",
     "supertest": "~0.15.0",
-    "body-parser": "~1.12.2"
+    "body-parser": "~1.12.2",
+    "config": "~1.12.0",
+    "morgan": "~1.5.2",
+    "log4js": "~0.6.22"
   },
   "engines": {
     "node": "0.10.33",
