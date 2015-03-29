@@ -37,11 +37,13 @@ var mailTextCreator = {};
      * メール本文を作成します。
      */
     self._createText = function (body) {
-        var text = '[お名前]：' + body.sellerName + '\r\n';
+        var text = '';
+        text += '[GUID]：' + body.id + '\r\n';
+        text += '[お名前]：' + body.sellerName + '\r\n';
         text += '[メールアドレス]：' + body.sellerEmail + '\r\n';
         text += '[電話番号]：' + body.sellerPhoneNumber + '\r\n';
         text += '[動画URL]：' + body.videoUrl + '\r\n';
-        text += '[動画説明]：' + body.videoExplain;
+        text += '[動画説明]：\r\n' + body.videoExplain;
         return text;
     };
 })(mailTextCreator);
