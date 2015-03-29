@@ -11,10 +11,17 @@ app.use(bodyParser());
 logger.access.debug('app Start');
 
 /**
+ * ALL
+ */
+app.all('/', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", config.auth.accessControlAllowOrigin);
+    next();
+});
+
+/**
  * GET
  */
 app.get('/', function (req, res) {
-    logger.access.debug('log4 hello world');
     res.send('Hello, World!!!');
 });
 
