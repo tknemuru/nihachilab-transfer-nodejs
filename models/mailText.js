@@ -1,12 +1,12 @@
 ﻿/**
  * メールテキスト
  */
-var MailText = (function () {
-    function MailText(subject, text) {
+var mailText = (function () {
+    function mailText(subject, text) {
         this.subject = subject;
         this.text = text;
     }
-    return MailText;
+    return mailText;
 })();
 
-module.exports = MailText;
+module.exports = mailText;

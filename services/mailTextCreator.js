@@ -1,4 +1,4 @@
-var MailText = require('/models/MailText');
+var MailText = require('../models/mailText');
 var stringHelper = require('./stringHelper');
 
 /**
