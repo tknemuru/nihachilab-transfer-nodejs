@@ -53,4 +53,4 @@ debug.log
 node_modules/
 
 # config
-config/
+# config/

@@ -1,0 +1,33 @@
+{
+    "log4js": {
+        "level": "ALL",
+        "configure": {
+            "appenders": [
+                {
+                    "category": "system",
+                    "type": "console"
+                },
+                {
+                    "category": "access",
+                    "type": "console"
+                },
+                {
+                    "category": "error",
+                    "type": "console"
+                }
+            ]
+        }
+    },
+    "auth": {
+        "accessControlAllowOrigin": "http://nihachilab.message"
+    },
+    "func": { 
+        "sendMail": false
+    },
+    "mailer": {
+        "service": "Gmail",
+        "user": "nihachilab@gmail.com",
+        "from": "nihachilab@gmail.com",
+        "to": "nihachilab@gmail.com"
+    }
+}

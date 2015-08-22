@@ -19,11 +19,12 @@ var mailManager = {};
         }
 
         // 送信設定
+        console.log(process.env.NODE_MAIL_PASS);
         var transporter = mailer.createTransport({
             service: config.mailer.service,
             auth: {
                 user: config.mailer.user,
-                pass: config.mailer.pass
+                pass: process.env.NODE_MAIL_PASS
             }
         });
         

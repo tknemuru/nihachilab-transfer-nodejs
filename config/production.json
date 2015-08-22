@@ -1,0 +1,30 @@
+{
+    "log4js": {
+        "level": "ALL",
+        "configure": {
+            "appenders": [
+                {
+                    "category": "system",
+                    "type": "dateFile",
+                    "filename": "logs/system.log",
+                    "pattern": "-yyyy-MM-dd"
+                },
+                {
+                    "category": "access",
+                    "type": "dateFile",
+                    "filename": "logs/access.log",
+                    "pattern": "-yyyy-MM-dd"
+                },
+                {
+                    "category": "error",
+                    "type": "dateFile",
+                    "filename": "logs/error.log",
+                    "pattern": "-yyyy-MM-dd"
+                }
+            ]
+        }
+    },
+    "func": { 
+        "sendMail": true
+    }
+}
