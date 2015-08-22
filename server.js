@@ -46,7 +46,7 @@ app.get('/agreement_register/', function (req, res) {
         res.send(guid);
     }
     catch (e) {
-        logger.access.debug(e);
+        logger.error.debug(e);
     }
 })
 
@@ -56,18 +56,18 @@ app.get('/agreement_register/', function (req, res) {
 app.post('/', function (req, res) {
     try {
         logger.access.debug('post Start');
-        logger.access.debug(req.body);
+        //logger.access.debug(req.body);
 
         // メールを送信
         var text = textCreator.getVideoPostedText(req);
         mailManager.send(text, function () {
-            res.send('send end');
+            logger.access.debug('send end');
         });
 
-        logger.access.debug('post End');
+        res.send('post End');
     }
     catch (e) {
-        logger.access.debug(e);
+        logger.error.debug(e);
     }
 })
 

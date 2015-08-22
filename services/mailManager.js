@@ -14,7 +14,7 @@ var mailManager = {};
      */
     mailManager.send = function (mailText, callback) {
         // メール非送信になっている場合は、callback関数を呼び出してすぐに終了
-        if (config.func.sendMail) {
+        if (!config.func.sendMail) {
             callback();
         }
 
