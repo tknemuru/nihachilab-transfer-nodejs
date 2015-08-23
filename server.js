@@ -8,7 +8,7 @@ var config = require('config');
 
 var app = express();
 
-//app.use(bodyParser());
+app.use(bodyParser());
 logger.access.debug('app Start');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
