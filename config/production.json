@@ -25,7 +25,7 @@
         }
     },
     "auth": {
-        "accessControlAllowOrigin": "https://www.28lab.com https://28lab.com"
+        "accessControlAllowOrigin": "https://www.28lab.com"
     },
     "func": { 
         "sendMail": true
