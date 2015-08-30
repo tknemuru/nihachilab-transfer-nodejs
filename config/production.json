@@ -22,12 +22,15 @@
                     "pattern": "-yyyy-MM-dd"
                 }
             ]
+        },
+        "levels": {
+            "system": "INFO"
         }
     },
     "auth": {
         "accessControlAllowOrigin": "https://www.28lab.com"
     },
-    "func": { 
+    "func": {
         "sendMail": true
     }
 }

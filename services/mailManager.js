@@ -19,7 +19,6 @@ var mailManager = {};
         }
 
         // 送信設定
-        console.log(process.env.NODE_MAIL_PASS);
         var transporter = mailer.createTransport({
             service: config.mailer.service,
             auth: {
@@ -40,11 +39,11 @@ var mailManager = {};
         logger.access.debug('sendMail Start');       
         transporter.sendMail(mailOptions, function (err, mres) {
             if (err) {
-                logger.access.debug(err);
+                logger.access.error(err);
             }
             else {
-                logger.access.debug('Message send');
-                logger.access.debug(mres);
+                logger.access.info('Message send');
+                logger.access.info(mres);
             }
             callback();
         });

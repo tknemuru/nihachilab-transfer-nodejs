@@ -25,6 +25,7 @@ app.all('/*', function (req, res, next) {
  */
 app.get('/', function (req, res) {
     res.send('Hello, World!!!');
+    logger.access.info('Hello, World!!!');
 });
 
 /**
@@ -40,13 +41,13 @@ app.get('/agreement_register/', function (req, res) {
         // メールを送信
         var text = textCreator.getAgreementText(req, guid);
         mailManager.send(text, function () {
-            logger.access.debug('send end');
+            logger.access.info('send end');
         });
 
         res.send(guid);
     }
     catch (e) {
-        logger.error.debug(e);
+        logger.error.error(e);
     }
 })
 
@@ -55,19 +56,19 @@ app.get('/agreement_register/', function (req, res) {
  */
 app.post('/', function (req, res) {
     try {
-        logger.access.debug('post Start');
+        logger.access.info('post Start');
         //logger.access.debug(req.body);
 
         // メールを送信
         var text = textCreator.getVideoPostedText(req);
         mailManager.send(text, function () {
-            logger.access.debug('send end');
+            logger.access.info('send end');
         });
 
         res.send('post End');
     }
     catch (e) {
-        logger.error.debug(e);
+        logger.error.error(e);
     }
 })
 
