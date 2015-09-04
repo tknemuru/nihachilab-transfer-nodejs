@@ -40,6 +40,7 @@ var mailManager = {};
         transporter.sendMail(mailOptions, function (err, mres) {
             if (err) {
                 logger.access.error(err);
+                console.log(err);
             }
             else {
                 logger.access.info('Message send');
