@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
     logger.access.info('Hello, World!!!');
     var fs = require('fs');
     var data = "write text test!";
-    fs.writeFile('./log/writetest.txt', data , function (err) {
+    fs.writeFile('/tmp/writetest.txt', data , function (err) {
         console.log(err);
     });
     res.send('Hello, World!!!');
