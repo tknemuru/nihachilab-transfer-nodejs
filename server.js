@@ -60,11 +60,12 @@ app.post('/', function (req, res) {
 
         // メールを送信
         var text = textCreator.getVideoPostedText(req);
-        mailManager.send(text, function () {
+        mailManager.send(text, function (result) {
             console.log('send end');
+            if (result === true) {                
+                res.send('post End');
+            }
         });
-
-        res.send('post End');
     }
     catch (e) {
         console.log(e);
