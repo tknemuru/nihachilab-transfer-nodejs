@@ -9,7 +9,7 @@ var config = require('config');
 var app = express();
 
 app.use(bodyParser());
-logger.access.debug('app Start');
+console.log('app Start');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 /**
@@ -24,13 +24,7 @@ app.all('/*', function (req, res, next) {
  * GET
  */
 app.get('/', function (req, res) {
-    logger.access.info('Hello, World!!!');
     console.log('Hello, World!!!');
-    var fs = require('fs');
-    var data = "write text test!";
-    fs.writeFile('/tmp/writetest.txt', data , function (err) {
-        console.log(err);
-    });
     res.send('Hello, World!!!');
 });
 
@@ -42,18 +36,18 @@ app.get('/agreement_register/', function (req, res) {
         // GUIDを生成
         var guid = guidGenerator.generate();
         var log = '規約への同意が行われました。[GUID]：' + guid;
-        logger.access.info(log);
+        console.log(log);
         
         // メールを送信
         var text = textCreator.getAgreementText(req, guid);
         mailManager.send(text, function () {
-            logger.access.info('send end');
+            console.log('send end');
         });
 
         res.send(guid);
     }
     catch (e) {
-        logger.error.error(e);
+        console.log(e);
     }
 })
 
@@ -62,19 +56,18 @@ app.get('/agreement_register/', function (req, res) {
  */
 app.post('/', function (req, res) {
     try {
-        logger.access.info('post Start');
-        //logger.access.debug(req.body);
+        console.log('post Start');
 
         // メールを送信
         var text = textCreator.getVideoPostedText(req);
         mailManager.send(text, function () {
-            logger.access.info('send end');
+            console.log('send end');
         });
 
         res.send('post End');
     }
     catch (e) {
-        logger.error.error(e);
+        console.log(e);
     }
 })
 

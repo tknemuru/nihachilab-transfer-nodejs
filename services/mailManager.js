@@ -36,15 +36,14 @@ var mailManager = {};
         }
         
         // 送信実行
-        logger.access.debug('sendMail Start');       
+        console.log('sendMail Start');
         transporter.sendMail(mailOptions, function (err, mres) {
             if (err) {
-                logger.access.error(err);
                 console.log(err);
             }
             else {
-                logger.access.info('Message send');
-                logger.access.info(mres);
+                console.log('Message send');
+                console.log(mres);
             }
             callback();
         });
