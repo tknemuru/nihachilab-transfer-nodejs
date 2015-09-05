@@ -40,11 +40,12 @@ app.get('/agreement_register/', function (req, res) {
         
         // メールを送信
         var text = textCreator.getAgreementText(req, guid);
-        mailManager.send(text, function () {
+        mailManager.send(text, function (result) {
             console.log('send end');
+            if (result === true) {
+                res.send(guid);
+            }
         });
-
-        res.send(guid);
     }
     catch (e) {
         console.log(e);
