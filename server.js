@@ -42,9 +42,10 @@ app.get('/agreement_register/', function (req, res) {
         var text = textCreator.getAgreementText(req, guid);
         mailManager.send(text, function (result) {
             console.log('send end');
-            if (result === true) {
-                res.send(guid);
+            if (result !== true) {
+                res.status(500);
             }
+            res.send(guid);
         });
     }
     catch (e) {
@@ -63,9 +64,10 @@ app.post('/', function (req, res) {
         var text = textCreator.getVideoPostedText(req);
         mailManager.send(text, function (result) {
             console.log('send end');
-            if (result === true) {                
-                res.send('post End');
+            if (result !== true) {
+                res.status(500);
             }
+            res.send('post end');
         });
     }
     catch (e) {
